@@ -5,6 +5,11 @@ export interface UserState {
   response: string[];
   error: string | undefined;
 }
+
+interface LoginCredentials {
+  username: string;
+  password: string;
+}
 const initialState: UserState = {
   loading: false,
   response: [],
@@ -14,9 +19,9 @@ const initialState: UserState = {
 
 export const userLogin = createAsyncThunk(
   "userLogin",
-  async() => {
+  async(data:LoginCredentials) => {
     try {
-      const response = await Service.commonPost("your-url", "");
+      const response = await Service.commonPost("v1/auth/singin",data);
       return response.data;
     } catch (error) {
       throw error;
