@@ -15,9 +15,8 @@
     "jsx": "react-jsx",
 
 
-        /* Allowing JavaScript files */
+      
         "allowJs": true,
-    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
